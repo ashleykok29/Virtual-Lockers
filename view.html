@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="The Locker System">
+    <meta name="moss-verification" content="efe37b65abf0bb539e4cadc13d8dddf01c447cd5e611c3c9ff4869c93ffb8019">
+    <title>The Locker System</title>
+    <!-- Import library code for MDL -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <!-- Import Color Picker library -->
+    <script src="libs/jscolor.js"></script>
+</head>
+<body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout-title">Digital Locker System</span>
+            </div>
+        </header>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <h2>
+                            <!-- Delete Button runs the function deleteThisLocker once clicked -->
+                            Locker: <span id="lockerId"></span>&nbsp;<button onclick="deleteThisLocker()" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" id="deleteLocker"><i class="material-icons">delete_forever</i></button>
+                        </h2>
+                        <div>
+                            <!-- Placeholder for 'Content' section / information of the current locker -->
+                            <h4>Contents</h4>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <textarea class="mdl-textfield__input" type="text" rows= "3" id="lockerContents" value="lockerContents"></textarea>
+                                <label class="mdl-textfield__label" for="lockerContents">Locker Contents...</label>
+                              </div>
+
+                        </div>
+                            <!-- Placeholder for 'Locker settings' section -->
+                            <h4>Settings</h4>
+                            <!-- Input box to display and change the locker label -->
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="lockerLabel" value="lockerLabel">
+                                <label class="mdl-textfield__label" for="lockerLabel">Locker Label</label>
+                            </div>
+                            <!-- Input box to display and choose the colour of the locker -->
+                            <div class="mdl-textfield mdl-sjs-textfield">
+                                <input class="mdl-textfield__input jscolor" type="text" id="lockerColor" value="lockerColor">
+                                <label class="mdl-textfield__label" for="lockerColor">Locker Colour</label>
+                            </div>
+
+                        <div>
+                            <!-- Placeholder for buttons -->
+                            <!-- 'Lock Locker' button runs the function lockLocker() on click-->
+                            <button onclick="lockLocker()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                                Lock Locker
+                              </button>
+                            <!-- 'Close Locker' button runs the function closeLocker() on click-->
+                            <button onclick="closeLocker()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                                Close Locker
+                              </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- Attach JS files -->
+    <script src="js/shared.js"></script>
+    <script src="js/view.js"></script>
+</body>
+</html>
